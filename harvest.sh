@@ -25,6 +25,17 @@ do
 	  ~/go/bin/metha-sync -format $oai_format $oai_url
 	  ~/go/bin/metha-cat -format $oai_format $oai_url > $git_dir/sucho-$git_repo/$oai_format.xml
 	  git -C $git_dir/sucho-$git_repo add $oai_format.xml
+	  ~/go/bin/metha-files -format $oai_format $oai_url > $git_dir/sucho-$git_repo/$oai_format-file_list.txt
+
+		while IFSf="" read -r file_list || [ -n "$file_list" ]
+		do
+		  printf '%s\n' "$oai_format"
+		  mkdir $git_dir/sucho-$git_repo/$oai_format
+		  rsync $file_list  $git_dir/sucho-$git_repo/$oai_format/
+		done < $git_dir/sucho-$git_repo/$oai_format-file_list.txt
+
+	  git -C $git_dir/sucho-$git_repo add $oai_format/*
+
 	done < $formats_file
   git -C $git_dir/sucho-$git_repo commit -am 'auto'
   git -C $git_dir/sucho-$git_repo push
