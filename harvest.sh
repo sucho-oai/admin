@@ -19,6 +19,8 @@ do
   echo $git_repo
   hut git create sucho-$git_repo -v public -d $oai_url
   git clone git@git.sr.ht:~justinkelly/sucho-$git_repo $git_dir/sucho-$git_repo
+		  rsync repo-readme.md  $git_dir/sucho-$git_repo/README.md
+	  git -C $git_dir/sucho-$git_repo add README.md
 	while IFSa="" read -r oai_format || [ -n "$oai_format" ]
 	do
 	  printf '%s\n' "$oai_format"
