@@ -71,3 +71,9 @@ Formats/metadataPrefixes harvested: oai_dc, oai_marc, marcxml, marc, mods,mets
 
 
 **Note: If the above xmls files are blank, it means that the harvested repository was not publishing in this metadata format. If this repository is blank except for the README,- it means that the OAI-PMH server has not been fully harvested yet or isn unable to be harvested**
+
+## Example OAI file
+
+Below is an example of the data stored in the OAI file - this one shows DC (Dublin Core) with the link to the soruce item file highlighted. These item files beed to be downloaded and stored as a seperate process
+
+![DC OAI sample](https://raw.githubusercontent.com/sucho-oai/admin/master/dc-example.png)
