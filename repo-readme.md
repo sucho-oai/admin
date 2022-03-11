@@ -9,13 +9,33 @@ This is a repository of the full harvest of the OAI-PMH server: OAI_URL using [m
 
 ## About this project
 
-The purpose of this project to take harvests of as many Ukrainian OAI-PMH repository servers (metadata and source files) as possible. Refer [https://github.com/sucho-oai](https://github.com/sucho-oai) for all the repositories harvested. 1 Git repository per OAI-PMH repository server or endpoint.
+The purpose of this project to take harvests of as many Ukrainian OAI-PMH repository servers (metadata and source files) as possible. Refer [https://github.com/sucho-oai](https://github.com/sucho-oai) for all the repositories harvested. 1 Git repository per OAI-PMH repository endpoint.
+
+Currently over 800 Ukrainian OAI endpoints have been documented, and harvests started
+
+### What is a OAI-PMH repository?
+
+OAI-PMH is an interoperability protocol used by archival and document repository servers. 
+
+### What is a document repository??
+
+Libraries, universities, institutions, reasearch organisations, academic publishers and more store, manage and publish their important documents - suchs as jounrals, thesis, research, iamges etc.. in doucment repository server - such as ePrints, OJS or Dspace.
 
 Repositories harvested include (but not limited to) academic journals, thesis PDFs, conference papers, images/photos, maps, scanned paintings and historical phtos - predominently from libraries (Univerities, regional, government, national and research), galleries, museums, government departments etc...
 
+### Why? 
+
 With the intent that if a Ukrainian repository is taken offline - it can be rebuild using these source files.
 
+Repository servers from the various Ukrainian organisation contain a huge collection of the knowledge, history and digital artifacts of Ukraines cultural heritage.
+
+Should anything happen to the physical entity - such as a library or gallery being destroyed, digital copies of their content is avialable in their document repositories. Should these digital copies become inaccessible (either servers physically destroyed or offline) this project (as well as [SUCHO.org](https://sucho.org) and the [Internet Archive](https://archive.org)) aim to have copies of the source OAI data and files.
+
+## SUCHO
+
 This project and repositories align with the [SUCHO.org](https://sucho.org) Saving Ukrainian Cultural Heritage Online project. SUCHO is doing an AMAZING job archiving to the [Internet Archive](https://archive.org) Ukraines curltural hertiage (libraries, galleries, musuems etc..) web site as possible as quickly as possible. It's focus is to crawl and archive Ukraines web pages in WACZ format - so they will be availble in perpetuity. If you are a cultural heritage profesional please consider volunteering.
+
+## Where are we at?
 
 This project has 4 parts:
 

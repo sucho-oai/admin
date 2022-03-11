@@ -4,7 +4,6 @@ The purpose of this project to take full harvests of as many Ukrainian OAI-PMH r
 
 Currently over 800 Ukrainian OAI endpoints have been documented, and harvests started
 
-
 ### What is a OAI-PMH repository?
 
 OAI-PMH is an interoperability protocol used by archival and document repository servers. 
@@ -22,6 +21,10 @@ With the intent that if a Ukrainian repository is taken offline - it can be rebu
 Repository servers from the various Ukrainian organisation contain a huge collection of the knowledge, history and digital artifacts of Ukraines cultural heritage.
 
 Should anything happen to the physical entity - such as a library or gallery being destroyed, digital copies of their content is avialable in their document repositories. Should these digital copies become inaccessible (either servers physically destroyed or offline) this project (as well as [SUCHO.org](https://sucho.org) and the [Internet Archive](https://archive.org)) aim to have copies of the source OAI data and files.
+
+## SUCHO
+
+This project and repositories align with the [SUCHO.org](https://sucho.org) Saving Ukrainian Cultural Heritage Online project. SUCHO is doing an AMAZING job archiving to the [Internet Archive](https://archive.org) Ukraines curltural hertiage (libraries, galleries, musuems etc..) web site as possible as quickly as possible. It's focus is to crawl and archive Ukraines web pages in WACZ format - so they will be availble in perpetuity. If you are a cultural heritage profesional please consider volunteering.
 
 ## Where are we at?
 
