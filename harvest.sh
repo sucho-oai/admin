@@ -53,23 +53,26 @@ do
 	sed -e "s@OAI_URL@$oai_url@g" -e "s@GIT_REPO@sucho-$git_repo@g" repo-readme.md > $git_dir/sucho-$git_repo/README.md
 	#sed "s@GIT_REPO@sucho-$git_repo@g" $git_dir/sucho-$git_repo/README.md > $git_dir/sucho-$git_repo/README.md
 	git -C $git_dir/sucho-$git_repo add README.md
-	while IFSa="" read -r oai_format || [ -n "$oai_format" ]
-	do
-		printf '%s\n' "$oai_format"
-		~/go/bin/metha-sync -max-empty-responses 2 -format $oai_format $oai_url
-		mkdir -p $asset_dir/sucho-$git_repo/$oai_format
-		~/go/bin/metha-cat -format $oai_format $oai_url > $asset_dir/sucho-$git_repo/$oai_format.xml
-		# git -C $git_dir/sucho-$git_repo add $oai_format.xml
-		~/go/bin/metha-files -format $oai_format $oai_url > $git_dir/sucho-$git_repo/$oai_format-file_list.txt
-
-		while IFSf="" read -r file_list || [ -n "$file_list" ]
+	if [ $do_harvest == "yes" ]
+	then
+		while IFSa="" read -r oai_format || [ -n "$oai_format" ]
 		do
-			rsync $file_list  $git_dir/sucho-$git_repo/$oai_format/
-		done < $git_dir/sucho-$git_repo/$oai_format-file_list.txt
+			printf '%s\n' "$oai_format"
+			~/go/bin/metha-sync -max-empty-responses 2 -format $oai_format $oai_url
+			mkdir -p $asset_dir/sucho-$git_repo/$oai_format
+			~/go/bin/metha-cat -format $oai_format $oai_url > $asset_dir/sucho-$git_repo/$oai_format.xml
+			# git -C $git_dir/sucho-$git_repo add $oai_format.xml
+			~/go/bin/metha-files -format $oai_format $oai_url > $git_dir/sucho-$git_repo/$oai_format-file_list.txt
 
-		git -C $git_dir/sucho-$git_repo add $oai_format/*
+			while IFSf="" read -r file_list || [ -n "$file_list" ]
+			do
+				rsync $file_list  $git_dir/sucho-$git_repo/$oai_format/
+			done < $git_dir/sucho-$git_repo/$oai_format-file_list.txt
 
-	done < $formats_file
+			git -C $git_dir/sucho-$git_repo add $oai_format/*
+
+		done < $formats_file
+	fi
 	git -C $git_dir/sucho-$git_repo commit -am 'auto'
 	git -C $git_dir/sucho-$git_repo push
 	#b2 sync $asset_dir/ $b2_folder

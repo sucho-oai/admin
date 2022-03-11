@@ -15,7 +15,7 @@ Libraries, universities, institutions, reasearch organisations, academic publish
 
 Repositories harvested include (but not limited to) academic journals, thesis PDFs, conference papers, images/photos, maps, scanned paintings and historical phtos - predominently from libraries (Univerities, regional, government, national and research), galleries, museums, government departments etc...
 
-### Why are you doing this? 
+### Why? 
 
 With the intent that if a Ukrainian repository is taken offline - it can be rebuild using these source files.
 
