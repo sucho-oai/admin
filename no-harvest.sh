@@ -3,7 +3,7 @@
 oai_dir=~/metha-dir
 git_dir=~/sucho-oai/git
 asset_dir=~/sucho-oai/assets
-hosts_file="hosts.txt"
+hosts_file="hosts.txt.full"
 b2_folder="b2://sucho-oai"
 formats_file="formats.txt"
 
