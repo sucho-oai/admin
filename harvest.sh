@@ -53,6 +53,17 @@ do
 	sed -e "s@OAI_URL@$oai_url@g" -e "s@GIT_REPO@sucho-$git_repo@g" repo-readme.md > $git_dir/sucho-$git_repo/README.md
 	#sed "s@GIT_REPO@sucho-$git_repo@g" $git_dir/sucho-$git_repo/README.md > $git_dir/sucho-$git_repo/README.md
 	git -C $git_dir/sucho-$git_repo add README.md
+	#formats
+	curl -s $oai_url?verb=ListMetadataFormats | grep metadataPrefix | cut -f2 -d">" |cut -f1 -d"<" > $git_dir/sucho-$git_repo/oai_formats.txt
+	git -C $git_dir/sucho-$git_repo add oai_formats.txt
+	if [ -s $git_dir/sucho-$git_repo/oai_formats.txt ]; then
+		# The file is not-empty.
+		oai_format_file=$git_dir/sucho-$git_repo/oai_formats.txt
+	else
+		# The file is empty.
+		oai_format_file=$formats_file
+	fi
+
 	if [ $do_harvest == "yes" ]
 	then
 		while IFSa="" read -r oai_format || [ -n "$oai_format" ]
@@ -71,7 +82,7 @@ do
 
 			git -C $git_dir/sucho-$git_repo add $oai_format/*
 
-		done < $formats_file
+		done < $oai_format_file
 	fi
 	git -C $git_dir/sucho-$git_repo commit -am 'auto'
 	git -C $git_dir/sucho-$git_repo push
